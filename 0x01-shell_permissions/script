@@ -1,0 +1,4 @@
+#!/bin/bash 
+echo "enter file name"
+read var 
+echo "#!/bin/bash" > ${var}
