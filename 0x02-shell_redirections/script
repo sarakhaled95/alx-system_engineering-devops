@@ -2,3 +2,4 @@
 echo enter file name 
 read var 
 echo "#!/bin/bash" > ${var}
+chmod u+x ${var}
