@@ -3,4 +3,4 @@ echo "enter commit message"
 read var 
 git add .
 git commit -m "${var}"
-pit push
+git push
