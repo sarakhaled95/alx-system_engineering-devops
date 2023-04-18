@@ -1,2 +1,2 @@
 #!/bin/bash
-alias path="$PATH: /action"
+alias path="$PATH:/action"
