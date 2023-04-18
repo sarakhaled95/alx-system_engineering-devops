@@ -1,2 +1,2 @@
 #!/bin/bash
-cat ASCII | tr [a-z] [$rot13]
+cat ASCII | tr 'A-Za-z' 'N-ZA-Mn-za-m'
