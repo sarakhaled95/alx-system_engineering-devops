@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "enter commit meassage"
+read var
+git add .
+git commit -m "${var}"
+git push
