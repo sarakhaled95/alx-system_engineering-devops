@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # displays the content of the current directory
 
-for files in /root/alx-system_engineering-devops/0x04-loops_conditions_and_parsing
+for files in /root/alx-system_engineering-devops/0x04-loops_conditions_and_parsing;
 do
 	cut -d "-" -f 2 /root/alx-system_engineering-devops/0x04-loops_conditions_and_parsing
 done
