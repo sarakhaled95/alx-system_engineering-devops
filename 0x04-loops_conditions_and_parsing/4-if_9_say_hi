@@ -8,6 +8,6 @@ do
 	i=$(( i+1 ))
 	if [ "$i" -eq 9 ]; then
 		echo Best School
-		echo hi
+		echo Hi
 	fi
 done
