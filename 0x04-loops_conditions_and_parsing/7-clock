@@ -2,10 +2,10 @@
 # This script is displaying "Best School" 10 times
 
 hour=0
-min=1
 while [ "$hour" -le 12 ];
 do
 	echo Hour: $hour
+	min=1
 	while [ "$min" -le 59 ];
 	do
 		echo $min
