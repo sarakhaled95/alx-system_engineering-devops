@@ -6,15 +6,16 @@ file="/root/alx-system_engineering-devops/0x04-loops_conditions_and_parsing/scho
 if [ -e "$file" ]; then
 	echo school file exists
 	if [ -s "$file" ]; then
-		echo school file is not empty
+		printf "school file is not empty\n"
 	else
-		echo school file is empty
+		printf "school file is empty\n"
 	fi
 	if [ -f "$file" ]; then
-		echo school is a regular file
+		printf "school is a regular file\n"
 	else
 		return
 	fi
 else
-	echo school file does not exist
+	printf "school file does not exist\n"
+
 fi
