@@ -6,20 +6,20 @@ sudo apt update
 sudo apt install -y nginx
 echo "Hello World!" | sudo tee /var/www/html/index.html
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
-echo "server {
-  listen 80;
-  listen [::]:80;
-  root var/www/html;
-  index index.html;
-  server_name $IP_Adress;
-  add_header X-Served-By $hostname;
-  error_page 404 /custom_404.html;
-  location = /custom_404.html{
-  root/var/www/html;
-  internal;
-  }
-  location/redirect_me{
-    return 301/;
-  }
-}"| sudo tee /etc/nginx/sites-available/default
+echo "server{
+	listen 80;
+	listen [::]:80;
+	root var/www/html;
+	index index.html;
+	server_name $IP_Adress;
+	add_header X-Served-By $hostname;
+	error_page 404 /custom_404.html;
+	location = /custom_404.html{
+	root/var/www/html;
+	internal;
+	}
+	location/redirect_me{
+		return 301/;
+	}
+i}"| sudo tee /etc/nginx/sites-available/default
 sudo service nginx restart
