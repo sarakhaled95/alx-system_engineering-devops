@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# server-02 login command
+
+ssh ubuntu@54.157.167.104
