@@ -8,6 +8,10 @@ global
         group haproxy
         daemon
 
+	# New commands
+        maxconn 2048
+        tune.ssl.default-dh-param 2048
+
         # Default SSL material locations
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
@@ -26,6 +30,10 @@ defaults
         timeout client  50000
         timeout server  50000
 
+	# New commands
+        option forwardfor
+        option http-server-close
+
 frontend sarakhaled95_front_end
         bind *:80
         bind *:443 ssl crt /etc/letsencrypt/live/www.saraswd.tech/fullchain.pem
@@ -36,8 +44,8 @@ frontend sarakhaled95_front_end
 backend sarakhaled95_back_end
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server 406123-web-01 54.157.145.55 check
-        server 406123-web-02 100.25.139.164 check
+        server 406123-web-01 54.157.145.55:80 check
+        server 406123-web-02 100.25.139.164:80 check
 
 backend letsencrypt-backend
         server letsencrypt 127.0.0.1:54321
