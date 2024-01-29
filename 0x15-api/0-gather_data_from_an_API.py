@@ -12,20 +12,19 @@ import json
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
 
-    employee_id = sys.argv[1]
+    userId = sys.argv[1]
 
-    user_response = requests.get(url + "users/{}".format(employee_id))
-    user = user_response.json()
-    params = {"userid": employee_id}
-    todo_response = requests.get(url + "todos", params=params)
-    todos = todo_response.json()
+    name = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                        .format(userId)).json()
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
+                         .format(userId)).json()
+
     completed = []
     for todo in todos:
         if todo.get("completed") is True:
             completed.append(todo.get("title"))
 
-    print("Employee {} is done with tasks({}/{}".format(user.get("name"),
-                                                        len(completed),
-                                                        len(todos)))
+    print("Employee {} is done with tasks({}/{}):".
+          format(name.get("name"), len(completed), len(todos)))
     for complete in completed:
         print("\t {}".format(complete))
