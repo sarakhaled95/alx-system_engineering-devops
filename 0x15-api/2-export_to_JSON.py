@@ -26,5 +26,5 @@ if __name__ == "__main__":
         tasksList.append(mydict)
     json_obj = {}
     json_obj[userId] = tasksList
-    with open("{}.json".format(userId), 'w') as jsonfile:
+    with open("USER_ID.json", 'w') as jsonfile:
         json.dump(json_obj, jsonfile)
