@@ -17,7 +17,7 @@ if __name__ == "__main__":
     todos = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
                          .format(userId)).json()
 
-    with open ("{}.csv".format(userId), 'w') as acsvfile:
+    with open("{}.csv".format(userId), 'w') as acsvfile:
         csvwriter = csv.writer(acsvfile, quoting=csv.QUOTE_ALL)
         for task in todos:
             csvwriter.writerow([userId, name.get('username'),
