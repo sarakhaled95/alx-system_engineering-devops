@@ -10,9 +10,9 @@ def number_of_subscribers(subreddit):
     """number of subscriber method"""
     subreddit = argv[1]
     url = "http://api.reddit.com/r/{}/about".format(subreddit)
-    agent_string = "API-practice-holberton-cardano"
-
-    subs = requests.get(url, headers={'User-Agent': agent_string})
+    agent_string = "API-practice-alx-cardano"
+    header = {'User-Agent': agent_string}
+    subs = requests.get(url, headers=header, allow_redirects=False)
     if subs.status_code != 200:
         return (0)
     else:
